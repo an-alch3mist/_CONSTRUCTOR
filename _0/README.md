@@ -1,10 +1,10 @@
 <br>
 
 ```
-# _0
-  each silicon(from prev and current) _state, 
-  each metal region(from curr) _state, makes the state flow from one to another region
-
+//
+  each silicon(from curr) _state, make the state enable between N <-> P <-> N  or P <-> N <-> P
+  each metal region(from curr) _state, makes the state enable between metal <-> N  or metal <-> P
+//
 
 ```
 
