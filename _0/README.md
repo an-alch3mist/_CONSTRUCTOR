@@ -3,7 +3,7 @@
 ```
 
 state enable between (silicons of same type) with (silicon of different type as interface from prev iter)
-state enable between (metal and silicon from curr iter)
+state enable between (metal and silicon connected from curr iter)
   
 ```
 
