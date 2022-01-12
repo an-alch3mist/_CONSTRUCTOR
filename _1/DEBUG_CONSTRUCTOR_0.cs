@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 
 
-public class DEBUG_CONSTRUCTOR_2 : MonoBehaviour
+public class DEBUG_CONSTRUCTOR_0 : MonoBehaviour
 {
 
     private void Update()
