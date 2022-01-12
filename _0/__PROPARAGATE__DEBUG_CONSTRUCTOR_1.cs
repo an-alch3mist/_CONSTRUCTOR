@@ -202,8 +202,7 @@
 
 
 
-
-	public class PROPAGATE_CURR
+  public class PROPAGATE_CURR
   {
       public bool[] silicon_state_1D__curr_state,
       public bool[] metal_state_1D__curr_state
