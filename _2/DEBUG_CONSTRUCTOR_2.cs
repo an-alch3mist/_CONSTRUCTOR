@@ -168,40 +168,40 @@ public class DEBUG_CONSTRUCTOR_2 : MonoBehaviour
         public static void _Propagate_( bool[] curr__M_switch )
         {
    
-			/*
-			bool[] prev__IRs_switch =  IRs_switch;
-			bool[] prev__IYs_switch =  IYs_switch;
-
-			Reset Rs , Ys , IRs , IYs ...__switch ...false
-			M__switch .... curr__M_switch
-
-			*/
-
-
-
-
-			/*
-
-			loop(30)
-				loop(all_silicon)
-					loop(all_its_relation__metal)
-						if(!on).... set_it_on
-					loop(all_its_relation__Isilicon)
-						loop(all_its_relation__Isilicon__silicon)
-							if(depending_on_Isilicon_type && !on ).... set_it_on
-
-
-				loop(all_Isilicon)
-					loop(all_its_relation__metal)
-						if(!on).... set_it_on
-
-
-				loop(all_Metal)
-					loop(all_its_relation__silicon)
-						if(!on).... set_it_on
-					loop(all_its_relation__Isilicon)
-						if(!on).... set_it_on       
-			*/
+            /*
+            bool[] prev__IRs_switch =  IRs_switch;
+            bool[] prev__IYs_switch =  IYs_switch;
+            							
+            Reset Rs , Ys , IRs , IYs ...__switch ...false
+            M__switch .... curr__M_switch
+            
+            */
+    
+    
+    
+    
+            /*
+            	
+            loop(30)
+                loop(all_silicon)
+                    loop(all_its_relation__metal)
+                        if(!on).... set_it_on
+                    loop(all_its_relation__Isilicon)
+                        loop(all_its_relation__Isilicon__silicon)
+                            if(depending_on_Isilicon_type && !on ).... set_it_on
+    
+    
+                loop(all_Isilicon)
+                    loop(all_its_relation__metal)
+                        if(!on).... set_it_on
+    
+    
+                loop(all_Metal)
+                    loop(all_its_relation__silicon)
+                        if(!on).... set_it_on
+                    loop(all_its_relation__Isilicon)
+                        if(!on).... set_it_on       
+            */
             
             
             
@@ -214,7 +214,6 @@ public class DEBUG_CONSTRUCTOR_2 : MonoBehaviour
     //...................................................//
     
     
-	
 
 }
 
