@@ -20,6 +20,17 @@ public class DEBUG_CONSTRUCTOR_2 : MonoBehaviour
     IEnumerator STIMUILATE()
     {
     	
+        
+        _CONSTRUCTOR_._INITIALIZE();
+        
+        
+        
+        while(true)
+        {
+            _CONSTRUCTOR._Propagate_(new bool[4] { true , false , false , false } );
+            
+            yield return new WaitForSeconds(4f);
+        }
         	
     	
         yield return null;
@@ -171,7 +182,7 @@ public class DEBUG_CONSTRUCTOR_2 : MonoBehaviour
     		
             loop(30)
     			loop(all_silicon)
-                	loop(all_its_relation__silicon__metal)
+                	loop(all_its_relation__metal)
                     	if(!on).... set_it_on
     				loop(all_its_relation__Isilicon)
                     	loop(all_its_relation__Isilicon__silicon)
@@ -185,7 +196,9 @@ public class DEBUG_CONSTRUCTOR_2 : MonoBehaviour
                         
                         
     			loop(all_Metal)
-                	loop(all_its_relation__silicon__metal)
+                	loop(all_its_relation__silicon)
+                    	if(!on).... set_it_on
+					loop(all_its_relation__Isilicon)
                     	if(!on).... set_it_on
                         
     		*/
