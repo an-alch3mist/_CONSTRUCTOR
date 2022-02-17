@@ -21,6 +21,7 @@ public class DEBUG_CONSTRUCTOR_2 : MonoBehaviour
     {
     	
         
+		
         _CONSTRUCTOR_._INITIALIZE();
         
         
@@ -29,7 +30,7 @@ public class DEBUG_CONSTRUCTOR_2 : MonoBehaviour
         {
             _CONSTRUCTOR._Propagate_(new bool[4] { true , false , false , false } );
             
-            yield return new WaitForSeconds(4f);
+            yield return new WaitForSeconds(5f);
         }
         	
     	
