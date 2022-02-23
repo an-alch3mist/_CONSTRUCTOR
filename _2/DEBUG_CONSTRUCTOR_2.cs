@@ -159,15 +159,15 @@ public class DEBUG_CONSTRUCTOR_2 : MonoBehaviour
             */
             
             
-			/*
+            /*
 
-			Rs_switch
-			Ys_switch
-			IRs_switch
-			IYs_switch
-			M_switch
-			
-			*/
+            Rs_switch
+            Ys_switch
+            IRs_switch
+            IYs_switch
+            M_switch
+            
+            */
             
         }
         
@@ -190,13 +190,13 @@ public class DEBUG_CONSTRUCTOR_2 : MonoBehaviour
             /*
             RESET
             
-			Rs_switch
-			Ys_switch
-			IRs_switch
-			IYs_switch
-			M_switch
+            Rs_switch
+            Ys_switch
+            IRs_switch
+            IYs_switch
+            M_switch
             
-			*/
+            */
             
             
             
