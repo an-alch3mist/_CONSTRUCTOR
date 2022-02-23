@@ -1,219 +1,238 @@
+//
 using UnityEngine;
-using System.Generic;
-using System.Generic.Collection;
+using System.Collection;
+using System.Collection.Generic;
+
 
 
 public class DEBUG_CONSTRUCTOR_2 : MonoBehaviour
 {
-
     private void Update()
     {
-        if(Input.GetMouseButtonDown(1))
+    	if(Input.GetMouseButtonDown(1)) 
         {
             StopAllCoroutines();
             StartCoroutine(STIMULATE());
+            
             //
         }
+        
     }
     
     
-    IEnumerator STIMUILATE()
+    
+    
+    IEnumerator STIMULATE()
     {
     	
-        
-		
-        _CONSTRUCTOR_._INITIALIZE();
         
         
         
         while(true)
         {
-            _CONSTRUCTOR._Propagate_(new bool[4] { true , false , false , false } );
             
-            yield return new WaitForSeconds(5f);
         }
-        	
-    	
-        yield return null;
+        
+        
     }
-    
-    
     
     
     
     public static class _CONSTRUCTOR_
     {
+        /* Relation */
+        
+        int[][] Rs_IYs;
+        int[][] Ys_IRs;
+        int[][][] Rs_IYs_Rs;
+        int[][][] Ys_IRs_Ys;
+        
+        int[][] Rs_M;
+        int[][] Ys_M;
+    
+        
+        
+        int[][] IRs_M;
+        int[][] IYs_M;
         
         
         
-        /*
-        0, 1, 2, 3, 4.... silicon or Isilicon
-        0, 1         .... metal
-        0, 1         .... via
+        int[][] M_Rs;
+        int[][] M_Ys;
         
-        */
-        
-        
-        public static int[,][] _Rs_Ys_IRs_IYs__Metal__Via___2D;
-        
-        
-        
-        
-        // Relation
-        // Rs...IRs , Ys...IYs , Rs...IYs...Rs , Ys...IRs...Ys , Rs....M , Ys...M
-        // IRs....Rs , IYs....Ys , IRs....M , IYs....M
-        // M....Rs , M....Ys , M....IRs , M....IYs
-        // 
-        //
-        public static int[][] Rs__M;      
-        public static int[][] Ys__M;       
-
-        public static int[][] Rs__IYs;
-        public static int[][] Rs__IYs__Rs;
-
-        public static int[][] Ys__IRs;
-        public static int[][] Ys__IRs__Ys; 
-
-        
-        public static int[][] IRs__M;
-        public static int[][] IYs__M;       
-
-        
-        public static int[][] M__Rs;
-        public static int[][] M__Ys;
-
-        public static int[][] M__IRs;
-        public static int[][] M__IYs;
-
+        int[][] M_IRs;
+        int[][] M_IYs;
         
         
         
         
         
         
-        public static bool[] Rs_switch;
-        public static bool[] Rs_switch;
-        public static bool[] IYs_switch;
-        public static bool[] IYs_switch;
-        public static bool[] M_switch;
+        
+        /* switch  */
+        
+        bool[] Rs;
+        bool[] Ys;
+        bool[] IRs;
+        bool[] IYs;
+        bool[] M;
         
         
         
         
         
+        /* BOARD */
+        int[,][] Rs_Ys_IRs_IYs__M__via_;
         
         
         
         public static void _INITIALIZE()
         {
-            List<int[]> R_Silicon_region,
-            			Y_Silicon_region,
-            			IR_Silicon_region,
-            			IY_Silicon_region,
-            			Metal_region;
+            
+            
+            List< List<int[]> > Rs_region_1D;
+            List< List<int[]> > Ys_region_1D;
+            List< List<int[]> > IRs_region_1D;
+            List< List<int[]> > IYs_region_1D;
+ 
+            List<int[]> via_1D;
+            
+            
+            
+            
+            
+            /*
+            Rs_Ys_IRs_IYs__M__via_
+            
+            Rs__or__Ys__or__IRs__or__IYs...... -1, 0, 1, 2, 3,
+            M                            ..... -1, 0
+            via                          ..... -1, 0
+            
+            
+            List< List<int> > S_region_1D;
+            List< List<int> > M_region_1D;
+            
+            
+            S_region_1D ....  Rs_region_1D , Ys_region_1D , IRs_region_1D ,IYs_region_1D
+            M_region_1D
+            via_1D
+            
+            */
             
             
             /*
 
-            FLood_Fill
 
-            _Rs_Ys_IRs_IYs__Metal__Via___2D to....
-            List<int[]> R_Silicon_region,
-                        Y_Silicon_region,
-                        IR_Silicon_region,
-                        IY_Silicon_region,
-                        Metal_region;
+            Rs_region_1D - IYs_region_1D  ... Rs_IYS
+            Ys_region_1D - IRs_region_1D  ... Ys_IRs
 
+
+            IYs_region_1D - Rs_region_1D ... int[][] IYs_Rs
+            IRs_region_1D - Ys_region_1D ... int[][] IRs_Ys
+            
+
+            Rs_IYs ... IYs_Rs ... Rs_IYs_Rs
+            Ys_IRs ... IRs_Ys ... Ys_IRs_Ys
+            
+            
+            
+            Rs_region_1D - M_region_1D  ... Rs_M
+            Ys_region_1D - M_region_1D  ... Ys_M
+            IRs_region_1D - M_region_1D ... IRs_M
+            IYs_region_1D - M_region_1D ... IYs_M
+            
+            M_region_1D - Rs_region_1D  ... M_Rs
+            M_region_1D - Ys_region_1D  ... M_Ys
+            M_region_1D - IRs_region_1D ... M_IRs
+            M_region_1D - IYs_region_1D ... M_IYs
+            
+
+            
+            
             */
-
-
-
-
-
-
+            
+            
             /*
-
-            Relation
-
-
-            Rs__M;      
-            Ys__M;      
-            Rs__IYs;
-            Rs__IYs__Rs;
-            Ys__IRs;
-            Ys__IRs__Ys;
-
-            IRs__M;
-            IYs__M;  
-
-            M__Rs;
-            M__Ys;
-            M__IRs;
-            M__IYs;
-
-            */
-
-
-
-
-            /*
-                RESET_all_switch_to_false
-            	
-            */
-        
-        
+            
+			Rs_switch
+			Ys_switch
+			IRs_switch
+			IYs_switch
+			M_switch
+            
+			*/
+            
         }
         
         
-        public static void _Propagate_( bool[] curr__M_switch )
+        
+        public static void _PRPAGATE(bool[] curr_M_switch)
         {
-   
             /*
-            bool[] prev__IRs_switch =  IRs_switch;
-            bool[] prev__IYs_switch =  IYs_switch;
-            							
-            Reset Rs , Ys , IRs , IYs ...__switch ...false
-            M__switch .... curr__M_switch
             
-            */
-    
-    
-    
-    
-            /*
-            	
-            loop(30)
-                loop(all_silicon)
-                    loop(all_its_relation__metal)
-                        if(!on).... set_it_on
-                    loop(all_its_relation__Isilicon)
-                        loop(all_its_relation__Isilicon__silicon)
-                            if(depending_on_Isilicon_type && !on ).... set_it_on
-    
-    
-                loop(all_Isilicon)
-                    loop(all_its_relation__metal)
-                        if(!on).... set_it_on
-    
-    
-                loop(all_Metal)
-                    loop(all_its_relation__silicon)
-                        if(!on).... set_it_on
-                    loop(all_its_relation__Isilicon)
-                        if(!on).... set_it_on       
+            bool[] prev_IRs_switch = _copy(IRs_switch)
+            bool[] prev_IYs_switch = _copy(IYs_switch)
+            
+            M_switch = curr_M_switch
+            
             */
             
             
             
             
+            /*
+            RESET
+            
+			Rs_switch
+			Ys_switch
+			IRs_switch
+			IYs_switch
+			M_switch
+            
+			*/
+            
+            
+            
+            
+            
+            /*
+            loop 30
+        	    
+                loop ..Rs
+                    loop ...IYs
+                        loop ..Rs
+                            if(IYs on) if(!on) switch it on
+
+                loop ..Rs
+                    loop ...M
+                        if(!on) switch it on
+
+
+
+                loop ..IRs
+                    loop ...M
+                        if(!on) switch it on
+
+
+
+
+                loop ..M
+                    loop ...R
+                        if(!on) switch it on
+
+                loop ..M
+                    loop ...IR
+                        if(!on) switch it on
+            */
+        
         }
         
         
         
     }
-    //...................................................//
-    
-    
-
+	
 }
+
+
+
 
