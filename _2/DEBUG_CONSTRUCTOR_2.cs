@@ -25,19 +25,19 @@ public class DEBUG_CONSTRUCTOR_2 : MonoBehaviour
     IEnumerator STIMULATE()
     {
     	// frame_rate
-		QualitySetting.VsyncCount = 4;
-		
-		
-		
+        QualitySetting.VsyncCount = 4;
+        
+        
+        
 
 
-		_CONSTRUCTOR_.INITIALIZE();
+        _CONSTRUCTOR_.INITIALIZE();
 		
         while(true)
         {
-        	_CONSTRUCTOR_.PROPAGATE(new bool[true , false , false , true , false]);
-			
-			yield return new WaitForSeconds(2f);
+            _CONSTRUCTOR_.PROPAGATE(new bool[true , false , false , true , false]);
+            	
+                yield return new WaitForSeconds(2f);
         }
         
         yield return null;
