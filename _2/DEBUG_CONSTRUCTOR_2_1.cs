@@ -347,7 +347,7 @@ public class DEBUG_CONSTRUCTOR_2 : MonoBehaviour
         
         
         
-        static int region_index(List<List<int[]>> region_1D , int[] _pos)
+        static int get_region_index_from_pos(List<List<int[]>> region_1D , int[] _pos)
         {
             
             
@@ -369,6 +369,58 @@ public class DEBUG_CONSTRUCTOR_2 : MonoBehaviour
         
         
         
+        
+        
+        
+        static int[] _neighbour_region_index_1D_of_type_ ( int[,] BOARD , int _curr_region_index  , List<List<int[]>> region_1D , int _type)
+        {
+                    
+            List<int> _neighbour_region_index_1D = new List<int>();
+            
+            
+            for(int i0 = 0 ; i0 < region_1D[_curr_region_index].Count ; i0 += 1)
+            {
+            	int[][] _dirs = new int[4][]
+                {
+                    new int[2] { +1 , +0 },
+                    new int[2] { +0 , +1 },
+                    new int[2] { -1 , +0 },
+                    new int[2] { +0 , -1 },
+                }
+                
+                
+                for(int i1 = 0; i1 < _dirs.length ; i1 += 1)
+                {
+                    int X = region_1D[_curr_region_index][0] + _dirs[i1][0],
+                    	Y = region_1D[_curr_region_index][1] + _dirs[i1][1];
+                    
+                    int neighbour_region_index = get_region_index_from_pos(X , Y);
+                    
+                    if( neighbour_region_index != _curr_region_index)
+                    {
+                        
+                        //
+                        //
+                        if(BOARD[ X , Y ] == _type)
+                        {
+                           if(!_neighbour_region_index_1D.Contains(neighbour_region_index))
+                           {
+                               _neighbour_region_index_1D.Add(neighbour_region_index);
+                           }
+                        }
+                        
+                        //
+                    }
+                }
+                
+            }
+            //
+            
+            return _neighbour_region_index_1D;
+            
+        }
+        
+        
     }
     
     
@@ -378,18 +430,6 @@ public class DEBUG_CONSTRUCTOR_2 : MonoBehaviour
     
 	
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
