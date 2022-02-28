@@ -122,10 +122,10 @@ public class DEBUG_CONSTRUCTOR_2 : MonoBehaviour
                     
                     	_corner_highlight : (BOARAD_2D_[x , y] == 2 || BOARAD_2D_[x , y] == 3),
                               
-                    	(x + 1 < BOARD_2D_.GetLength(0) - 1)? ( BOARD_2D[x + 1 , y + 0] == BOARD_2D[x , y] ) : false,
-                    	(y + 1 < BOARD_2D_.GetLength(1) - 1)? ( BOARD_2D[x + 0 , y + 1] == BOARD_2D[x , y] ) : false,
-                    	(x - 1 >= 0						   )? ( BOARD_2D[x - 1 , y + 0] == BOARD_2D[x , y] ) : false,
-                    	(y - 1 >= 0						   )? ( BOARD_2D[x + 0 , y - 1] == BOARD_2D[x , y] ) : false,
+                    	(x + 1 < BOARD_2D_.GetLength(0) - 1)? ( BOARD_2D_[x + 1 , y + 0] == BOARD_2D_[x , y] ) : false,
+                    	(y + 1 < BOARD_2D_.GetLength(1) - 1)? ( BOARD_2D_[x + 0 , y + 1] == BOARD_2D_[x , y] ) : false,
+                    	(x - 1 >= 0						   )? ( BOARD_2D_[x - 1 , y + 0] == BOARD_2D_[x , y] ) : false,
+                    	(y - 1 >= 0						   )? ( BOARD_2D_[x + 0 , y - 1] == BOARD_2D_[x , y] ) : false,
                     	
 					);
                     //....QUAD ....//
@@ -286,191 +286,96 @@ public class DEBUG_CONSTRUCTOR_2 : MonoBehaviour
             //.... iter ....//
             for(int iter = 0 ; iter < 30 ; iter += 1)
             {
-            
                 
-                
-                
-                
-            
-            
-            // .... Rs .... //
-            for(int i0 = 0 ; i0 < Rs_switch_.Length ;i0 += 1)
-            { 
-                for(int i1 = 0 ;i1 < Rs_IYs.Length ; i1 += 1)
-                {
-                    for(int i2 = 0 ;i2 < Rs_IYs_Rs[i0][i1].Length ; i2 += 1)
-                    {
-						if(Rs_switch_[i0])
-                        { 
-                            if(prev_IYs_switch_[Rs_IYs[i0][i1]]) 
-                            { 
-                                if(!Rs_switch_[ Rs_IYs_Rs[i0][i1][i2] ]) 
-                                { Rs_switch_[ Rs_IYs_Rs[i0][i1][i2] ] = true; }  
-                            }  
-                        }
-                        //
-                    }
-                }
-                
-                
-                for(int i1 = 0 ;i1 < Rs_M.Length ; i1 += 1)
-                {
-                    if(Rs_switch_[i0])
-                    { 
-                    	if(!M_switch_[ Rs_M[i0][i1] ] )
-                        {
-                        	M_switch_[ Rs_M[i0][i1] ] = true;
-                        }
-                        //
-                    }
-                }
-                
-            }
-            // .... Rs .... //
-            
-            
-            
-            
-            // .... Ys .... //
-            for(int i0 = 0 ; i0 < Ys_switch_.Length ;i0 += 1)
-            { 
-                for(int i1 = 0 ;i1 < Ys_IRs.Length ; i1 += 1)
-                {
-                    for(int i2 = 0 ;i2 < Ys_IRs_Ys[i0][i1].Length ; i2 += 1)
-                    {
-						if(Ys_switch_[i0])
-                        { 
-                            if(!prev_IRs_switch_[Ys_IRs[i0][i1]]) 
-                            { 
-                                if(!Ys_switch_[ Ys_IRs_Ys[i0][i1][i2] ]) 
-                                { Ys_switch_[ Ys_IRs_Ys[i0][i1][i2] ] = true; }  
-                            }  
-                        }
-                        //
-                    }
-                }
-                
-                
-                for(int i1 = 0 ;i1 < Ys_M.Length ; i1 += 1)
-                {
-                    if(Ys_switch_[i0])
-                    { 
-                    	if(!M_switch_[ Ys_M[i0][i1] ] )
-                        {
-                        	M_switch_[ Ys_M[i0][i1] ] = true;
-                        }
-                        //
-                    }
-                }
-                
-            }
-            // .... Ys .... //
+             
+             //.... Rs ....//
+             for(int i0 = 0 ; i0 < Rs_switch_.Length ;i0 += 1)
+             { 
+                 if(Rs_switch_[i0])
+                 {
+                     for(int i1 = 0 ;i1 < Rs_IYs.Length ; i1 += 1)
+                     {
+                         for(int i2 = 0 ;i2 < Rs_IYs_Rs[i0][i1].Length ; i2 += 1)
+                         {
+                             if(prev_IYs_switch_[Rs_IYs[i0][i1]]) { Rs_switch_[ Rs_IYs_Rs[i0][i1][i2] ] = true; } 
+                         }
+                     }
 
 
-            
-            
-            
-			// .... IRs .... //
+                     for(int i1 = 0 ;i1 < Rs_M.Length ; i1 += 1) { M_switch_[ Rs_M[i0][i1] ] = true; }
+
+
+                 }
+             }
+             //.... Rs ....//
+             
+             
+             //.... Ys ....//
+             for(int i0 = 0 ; i0 < Ys_switch_.Length ;i0 += 1)
+             { 
+                 if(Ys_switch_[i0])
+                 {
+                     for(int i1 = 0 ;i1 < Ys_IRs.Length ; i1 += 1)
+                     {
+                         for(int i2 = 0 ;i2 < Ys_IRs_Ys[i0][i1].Length ; i2 += 1)
+                         {
+                             if(!prev_IRs_switch_[Ys_IRs[i0][i1]]) { Ys_switch_[ Ys_IRs_Ys[i0][i1][i2] ] = true;  }
+
+                         }
+                     }
+
+
+                     for(int i1 = 0 ;i1 < Ys_M.Length ; i1 += 1) { M_switch_[ Ys_M[i0][i1] ] = true; }
+
+
+                 }
+             }
+             //.... Ys ....//
+             
+             
+             
+             // .... IRs .... //
             for(int i0 = 0 ; i0 < IRs_switch_.Length ;i0 += 1)
             { 
 
-                for(int i1 = 0 ;i1 < IRs_M.Length ; i1 += 1)
-                {
-                    if(IRs_switch_[i0])
-                    { 
-                    	if(!M_switch_[ IRs_M[i0][i1] ] )
-                        {
-                        	M_switch_[ IRs_M[i0][i1] ] = true;
-                        }
-                        //
-                    }
-                }
-                
+               	if(IRs_switch_[i0]) {  for(int i1 = 0 ;i1 < IRs_M.Length ; i1 += 1)  { M_switch_ [ IRs_M[i0][i1] ] = true; }  }
+              
             }
             // .... IRs .... //
 
-
-            
-			// .... IYs .... //
+             
+             // .... IYs .... //
             for(int i0 = 0 ; i0 < IYs_switch_.Length ;i0 += 1)
             { 
 
-                for(int i1 = 0 ;i1 < IYs_M.Length ; i1 += 1)
-                {
-                    if(IYs_switch_[i0])
-                    { 
-                    	if(!M_switch_[ IYs_M[i0][i1] ] )
-                        {
-                        	M_switch_[ IYs_M[i0][i1] ] = true;
-                        }
-                        //
-                    }
-                }
-                
+               	if(IYs_switch_[i0]) {  for(int i1 = 0 ;i1 < IYs_M.Length ; i1 += 1)  { M_switch_ [ IYs_M[i0][i1] ] = true; }  }
+              
             }
             // .... IYs .... //
-
-
-
-
-            
-            
+             
+             
+             
             
             // .... M .... //
             for(int i0 = 0 ; i0 < M_switch_.Length ;i0 += 1)
             { 
 
-                for(int i1 = 0 ;i1 < M_Rs.Length ; i1 += 1)
+               	if(M_switch_[i0])
                 {
-                    if(M_switch_[i0])
-                    { 
-                    	if(!Rs_switch_[ M_Rs[i0][i1] ] )
-                        {
-                        	Rs_switch_[ M_Rs[i0][i1] ] = true;
-                        }
-                        //
-                    }
+                    for(int i1 = 0 ;i1 < M_Rs.Length ; i1 += 1)  { Rs_switch_ [ M_Rs[i0][i1] ] = true; }
+                    for(int i1 = 0 ;i1 < M_Ys.Length ; i1 += 1)  { Ys_switch_ [ M_Ys[i0][i1] ] = true; }
+                    for(int i1 = 0 ;i1 < M_IRs.Length ; i1 += 1) { IRs_switch_[ M_IRs[i0][i1] ] = true; }
+                    for(int i1 = 0 ;i1 < M_IYs.Length ; i1 += 1) { IYs_switch_[ M_IYs[i0][i1] ] = true; }
+
+                    
                 }
-                
-                
-                for(int i1 = 0 ;i1 < M_Ys.Length ; i1 += 1)
-                {
-                    if(M_switch_[i0])
-                    { 
-                    	if(!Ys_switch_[ M_Ys[i0][i1] ] )
-                        {
-                        	Ys_switch_[ M_Ys[i0][i1] ] = true;
-                        }
-                        //
-                    }
-                }
-                
-                for(int i1 = 0 ;i1 < M_IRs.Length ; i1 += 1)
-                {
-                    if(M_switch_[i0])
-                    { 
-                    	if(!IRs_switch_[ M_IRs[i0][i1] ] )
-                        {
-                        	IRs_switch_[ M_IRs[i0][i1] ] = true;
-                        }
-                        //
-                    }
-                }
-                
-                for(int i1 = 0 ;i1 < M_IYs.Length ; i1 += 1)
-                {
-                    if(M_switch_[i0])
-                    { 
-                    	if(!IYs_switch_[ M_IYs[i0][i1] ] )
-                        {
-                        	IYs_switch_[ M_IYs[i0][i1] ] = true;
-                        }
-                        //
-                    }
-                }
-                
+              
             }
             // .... M .... //
+            
+            
+            
+            
             
             
             }
