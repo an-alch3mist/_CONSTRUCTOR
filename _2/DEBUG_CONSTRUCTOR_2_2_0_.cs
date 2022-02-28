@@ -173,9 +173,9 @@ public class DEBUG_CONSTRUCTOR_2 : MonoBehaviour
 	public static class _CONSTRUCTOR
 	{
         
-        int[,] BOARD_2D_;
-        int[,] BOARD_2D_M_;
-        int[,] BOARD_2D_M_via_;
+        static int[,] BOARD_2D_;
+        static int[,] BOARD_2D_M_;
+        static int[,] BOARD_2D_M_via_;
         
         public static void INITIALIZE()
         {
