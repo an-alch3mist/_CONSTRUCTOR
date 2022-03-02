@@ -62,7 +62,7 @@ public class DEBUG_CONSTRUCTOR_2_2_0_ : MonoBehaviour
                 {
 
 
-                    if      (Input.GetKey(KeyCode.Alpha1)) { _CONSTRUCTOR_.BOARD_2D_[X, Y] = +0; }
+                    if (Input.GetKey(KeyCode.Alpha1)) { _CONSTRUCTOR_.BOARD_2D_[X, Y] = +0; }
                     else if (Input.GetKey(KeyCode.Alpha2)) { _CONSTRUCTOR_.BOARD_2D_[X, Y] = +1; }
                     else if (Input.GetKey(KeyCode.Alpha3)) { _CONSTRUCTOR_.BOARD_2D_[X, Y] = +2; }
                     else if (Input.GetKey(KeyCode.Alpha4)) { _CONSTRUCTOR_.BOARD_2D_[X, Y] = +3; }
@@ -182,8 +182,8 @@ public class DEBUG_CONSTRUCTOR_2_2_0_ : MonoBehaviour
 
 
 
-        Debug.Log( _TOOL_.FLOOD_FILL(_CONSTRUCTOR_.BOARD_2D_).Count);
-        _TOOL_.region_1D_1D(_CONSTRUCTOR_.BOARD_2D_,_TOOL_.FLOOD_FILL(_CONSTRUCTOR_.BOARD_2D_));
+        Debug.Log(_TOOL_.FLOOD_FILL(_CONSTRUCTOR_.BOARD_2D_).Count);
+        _TOOL_.region_1D_1D(_CONSTRUCTOR_.BOARD_2D_, _TOOL_.FLOOD_FILL(_CONSTRUCTOR_.BOARD_2D_));
 
         /*
         Debug.Log(_CONSTRUCTOR_.region_1D_Rs_.Count);
@@ -237,11 +237,12 @@ public class DEBUG_CONSTRUCTOR_2_2_0_ : MonoBehaviour
 
 
 
-		// _relate_0
+        // _relate_0
         int[][][] _relate_0 = _TOOL_._relate_silicon__Isilicon(
-			_TOOL_.relation_of_type_A_region__to__type_B_region_neighbour_(_CONSTRUCTOR_.region_1D_IYs_, _CONSTRUCTOR_.region_1D_Rs_),
-			_TOOL_.relation_of_type_A_region__to__type_B_region_neighbour_(_CONSTRUCTOR_.region_1D_Rs_, _CONSTRUCTOR_.region_1D_TYs_),
-		);
+            _TOOL_.relation_of_type_A_region__to__type_B_region_neighbour_(_CONSTRUCTOR_.region_1D_IYs_, _CONSTRUCTOR_.region_1D_Rs_),
+            _TOOL_.relation_of_type_A_region__to__type_B_region_neighbour_(_CONSTRUCTOR_.region_1D_Rs_, _CONSTRUCTOR_.region_1D_IYs_)
+
+        );
 
 
 
@@ -249,22 +250,22 @@ public class DEBUG_CONSTRUCTOR_2_2_0_ : MonoBehaviour
         for (int i0 = 0; i0 < _relate_0.Length; i0 += 1)
         {
             str += "---";
-            for (int i1 = 0; i1 < _relate_0.Length[i0].Length; i1 += 1)
+            for (int i1 = 0; i1 < _relate_0[i0].Length; i1 += 1)
             {
-				str += "--";
-				for (int i2 = 0; i2 < _relate_0.Length[i0][i1].Length; i2 += 1)
-				{
-					str += _relate_0.Length[i0][i1][i2] + ", ";
-				}
-                
+                str += "--";
+                for (int i2 = 0; i2 < _relate_0[i0][i1].Length; i2 += 1)
+                {
+                    str += _relate_0[i0][i1][i2] + ", ";
+                }
+
             }
             //
 
         }
         Debug.Log(str);
-		
-		
-		
+
+
+
 
 
 
@@ -434,7 +435,7 @@ public class DEBUG_CONSTRUCTOR_2_2_0_ : MonoBehaviour
 
         public static void INITIALIZE_RELATION()
         {
-            _TOOL_.region_1D_1D(BOARD_2D_ , _TOOL_.FLOOD_FILL(BOARD_2D_));
+            _TOOL_.region_1D_1D(BOARD_2D_, _TOOL_.FLOOD_FILL(BOARD_2D_));
             region_1D_M_ = _TOOL_.FLOOD_FILL(BOARD_2D_M_);
 
 
