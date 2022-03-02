@@ -306,64 +306,64 @@ public static class _TOOL_
         
         return _TA_TB_1D_1D_;
     }
-    
-    
-    
+
+
+
     /*	*/
-    public static int[][][]  _relate_silicon__Isilicon(int[][] silicon , int[][] Isilicon)
+    public static int[][][] _relate_silicon__Isilicon(int[][] silicon, int[][] Isilicon)
     {
         List<List<List<int>>> _relate_0 = new List<List<List<int>>>();
-        
-        for(int i0 = 0 ;i0 < silicon.Length ; i0 += 1)
+
+        for (int i0 = 0; i0 < silicon.Length; i0 += 1)
         {
             //
             List<List<int>> _relate_1 = new List<List<int>>();
-            for(int i1 = 0; i1 < silicon[i0].Length; i1 += 1)
+            for (int i1 = 0; i1 < silicon[i0].Length; i1 += 1)
             {
                 //
                 List<int> _relate_2 = new List<int>();
-                
-                for(int i2 = 0 ;i2 < Isilicon[silicon[i0][i1]].Length ; i2 += 1)
+
+                for (int i2 = 0; i2 < Isilicon[silicon[i0][i1]].Length; i2 += 1)
                 {
-                    if(Isilicon[silicon[i0][i1]][i2] != i0)
+                    if (Isilicon[silicon[i0][i1]][i2] != i0)
                     {
-                        _relate_2.Add(Isilicon[silicon[i0][i1]][i2]);   
+                        _relate_2.Add(Isilicon[silicon[i0][i1]][i2]);
                     }
                 }
-                
+
                 _relate_1.Add(_relate_2);
                 //
             }
-            
+
             _relate_0.Add(_relate_1);
             //
         }
         //
-        
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
+
         int[][][] _relate_1D_1D_1D = new int[_relate_0.Count][][];
-        for(int i0 = 0 ; i0 < _relate_0.Count ; i0 += 1)
+        for (int i0 = 0; i0 < _relate_0.Count; i0 += 1)
         {
-	        //
-            _relate_1D_1D_1D[i0] = new int[_relate_0[i0].Count][];
-            for(int i1 0; i1 < _relate_0[i0].Count; i1 += 1)
-            {
-		        //
-                _relate_1D_1D_1D[i0][i1] = new int[_relate_0[i0][i1].Count];
-                for(int i2 = 0 ;i2 < _relate_0[i0][i1].Count ; i2 += 1)
-                {
-		            //
-                    _relate_1D_1D_1D[i0][i1][i2] = _relate_0[i0][i1][i2];
-                }
-                  
-            }
             //
+            _relate_1D_1D_1D[i0] = new int[_relate_0[i0].Count][];
+            for (int i1 = 0; i1 < _relate_0[i0].Count; i1 += 1)
+            {
+            //
+            _relate_1D_1D_1D[i0][i1] = new int[_relate_0[i0][i1].Count];
+            for (int i2 = 0; i2 < _relate_0[i0][i1].Count; i2 += 1)
+            {
+                //
+                _relate_1D_1D_1D[i0][i1][i2] = _relate_0[i0][i1][i2];
+            }
+
         }
+        //
+    }
         
         
         return _relate_1D_1D_1D;
