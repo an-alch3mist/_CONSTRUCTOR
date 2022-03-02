@@ -320,7 +320,8 @@ public static class _TOOL_
             List<List<int>> _relate_1 = new List<List<int>>();
             for(int i1 = 0; i1 < silicon[i0].Length; i1 += 1)
             {
-                List<int> _realte_2 = new List<int>();
+                //
+                List<int> _relate_2 = new List<int>();
                 
                 for(int i2 = 0 ;i2 < Isilicon[silicon[i0][i1]].Length ; i2 += 1)
                 {
@@ -330,27 +331,34 @@ public static class _TOOL_
                     }
                 }
                 
-                _relate_1(_relate_2);
+                _relate_1.Add(_relate_2);
                 //
             }
             
-            _realate_0.Add(_relate_1);
+            _relate_0.Add(_relate_1);
             //
         }
         //
         
         
         
+        
+        
+        
+        
         int[][][] _relate_1D_1D_1D = new int[_relate_0.Count][][];
         for(int i0 = 0 ; i0 < _relate_0.Count ; i0 += 1)
         {
+	        //
             _relate_1D_1D_1D[i0] = new int[_relate_0[i0].Count][];
             for(int i1 0; i1 < _relate_0[i0].Count; i1 += 1)
             {
-                _relate_1D_1D_1D[i0][i1] = new int[_realte_0[i0][i1].Count];
+		        //
+                _relate_1D_1D_1D[i0][i1] = new int[_relate_0[i0][i1].Count];
                 for(int i2 = 0 ;i2 < _relate_0[i0][i1].Count ; i2 += 1)
                 {
-                    _relate_1D_1D_1D[i0][i1][i2] = _realte_0[i0][i1][i2];
+		            //
+                    _relate_1D_1D_1D[i0][i1][i2] = _relate_0[i0][i1][i2];
                 }
                   
             }
