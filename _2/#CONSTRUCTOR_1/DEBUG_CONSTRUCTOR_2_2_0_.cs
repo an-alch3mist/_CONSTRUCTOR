@@ -239,9 +239,8 @@ public class DEBUG_CONSTRUCTOR_2_2_0_ : MonoBehaviour
 
         // _relate_0
         int[][][] _relate_0 = _TOOL_._relate_silicon__Isilicon(
+			_TOOL_.relation_of_type_A_region__to__type_B_region_neighbour_(_CONSTRUCTOR_.region_1D_Rs_, _CONSTRUCTOR_.region_1D_IYs_)
             _TOOL_.relation_of_type_A_region__to__type_B_region_neighbour_(_CONSTRUCTOR_.region_1D_IYs_, _CONSTRUCTOR_.region_1D_Rs_),
-            _TOOL_.relation_of_type_A_region__to__type_B_region_neighbour_(_CONSTRUCTOR_.region_1D_Rs_, _CONSTRUCTOR_.region_1D_IYs_)
-
         );
 
 
@@ -249,7 +248,7 @@ public class DEBUG_CONSTRUCTOR_2_2_0_ : MonoBehaviour
         str = "";
         for (int i0 = 0; i0 < _relate_0.Length; i0 += 1)
         {
-            str += "---";
+            str += "//";
             for (int i1 = 0; i1 < _relate_0[i0].Length; i1 += 1)
             {
                 str += "--";
@@ -260,6 +259,7 @@ public class DEBUG_CONSTRUCTOR_2_2_0_ : MonoBehaviour
 
             }
             //
+
 
         }
         Debug.Log(str);
