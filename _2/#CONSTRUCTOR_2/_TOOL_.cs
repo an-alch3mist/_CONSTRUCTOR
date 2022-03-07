@@ -299,7 +299,7 @@ public static class _TOOL_
             _TA_TB_1D_1D_[i0] = new int[TA_TB_1D_1D[i0].Count];
             for(int i1 = 0; i1 < TA_TB_1D_1D[i0].Count ; i1 += 1)
             {
-            	_TA_TB_1D_1D_[i0][i1] = _TA_TB_1D_1D_[i0][i1];
+            	_TA_TB_1D_1D_[i0][i1] = TA_TB_1D_1D[i0][i1];
             }
             //
         }
@@ -352,7 +352,7 @@ public static class _TOOL_
             _TA_TB_1D_1D_[i0] = new int[TA_TB_1D_1D[i0].Count];
             for (int i1 = 0; i1 < TA_TB_1D_1D[i0].Count; i1 += 1)
             {
-                _TA_TB_1D_1D_[i0][i1] = _TA_TB_1D_1D_[i0][i1];
+                _TA_TB_1D_1D_[i0][i1] = TA_TB_1D_1D[i0][i1];
             }
             //
         }
