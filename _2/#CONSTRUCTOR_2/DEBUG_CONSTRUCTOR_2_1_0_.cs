@@ -222,8 +222,8 @@ public class DEBUG_CONSTRUCTOR_2_1_0_ : MonoBehaviour
 
 
 
-
-
+        LOG._1D_1D(_CONSTRUCTOR_.Rs_M);
+        Debug.Log(_TOOL_.FLOOD_FILL(_CONSTRUCTOR_.BOARD_2D_M_).Count);
 
 
 
@@ -239,7 +239,7 @@ public class DEBUG_CONSTRUCTOR_2_1_0_ : MonoBehaviour
 
             _iter += 1; 
 
-            if(_iter % 60 == 0)
+            if(_iter % 20 == 0)
             {
                 _CONSTRUCTOR_._PROPAGATE();
             }
@@ -763,27 +763,27 @@ public class DEBUG_CONSTRUCTOR_2_1_0_ : MonoBehaviour
         public static List<List<int[]>> region_1D_M_;
 
 
-        static int[][] In_M;
+        public static int[][] In_M;
 
-        static int[][] Rs_IYs;
-        static int[][] Ys_IRs;
-        static int[][] IRs_Ys;
-        static int[][] IYs_Rs;
+        public static int[][] Rs_IYs;
+        public static int[][] Ys_IRs;
+        public static int[][] IRs_Ys;
+        public static int[][] IYs_Rs;
 
-        static int[][][] Rs_IYs_Rs;
-        static int[][][] Ys_IRs_Ys;
+        public static int[][][] Rs_IYs_Rs;
+        public static int[][][] Ys_IRs_Ys;
 
 
-        static int[][] Rs_M;
-        static int[][] Ys_M;
+        public static int[][] Rs_M;
+        public static int[][] Ys_M;
 
-        static int[][] IRs_M;
-        static int[][] IYs_M;
-
-        static int[][] M_Rs;
-        static int[][] M_Ys;
-        static int[][] M_IRs;
-        static int[][] M_IYs;
+        public static int[][] IRs_M;
+        public static int[][] IYs_M;
+        
+        public static int[][] M_Rs;
+        public static int[][] M_Ys;
+        public static int[][] M_IRs;
+        public static int[][] M_IYs;
 
 
 
@@ -1033,7 +1033,30 @@ public class DEBUG_CONSTRUCTOR_2_1_0_ : MonoBehaviour
 
 
 
+    public static class LOG
+    {
+        public static void _1D_1D(int[][] Rs_M)
+        {
+            string str = "";
 
+            
+            for (int i0 = 0; i0 < Rs_M.Length; i0 += 1)
+            {
+                str += "--";
+                for (int i1 = 0; i1 < Rs_M[i0].Length; i1 += 1)
+                {
+                    str += Rs_M[i0][i1] + ", ";
+                }
+
+            }
+
+
+
+            Debug.Log(str);
+        }
+
+
+    }
 
 
 
